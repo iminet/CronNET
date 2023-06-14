@@ -4,16 +4,37 @@
     <OutputType>Library</OutputType>
     <RootNamespace>CronNET</RootNamespace>
     <AssemblyName>CronNET</AssemblyName>
-    <PackageReleaseNotes>Migrated from .NET 4.0 to .NET 5.0</PackageReleaseNotes>
-    <Version>8.0</Version>
+    <PackageReleaseNotes>Added package icon</PackageReleaseNotes>
+    <Version>8.0.1</Version>
+    <AssemblyVersion>8.0.1</AssemblyVersion>
+    <FileVersion>8.0.1</FileVersion>
     <Authors>kevinkolyar, iminet</Authors>
     <Product>C# library for running cron jobs on .NET</Product>
     <PackageId>Iminetsoft.CronNET</PackageId>
+    <PackageIcon>iminetsoft.png</PackageIcon>
     <PackageProjectUrl>https://github.com/iminet/CronNET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/iminet/CronNET</RepositoryUrl>
     <PackageTags>dotnet Cron Crondaemon Crontab</PackageTags>
-    <AssemblyVersion>8.0</AssemblyVersion>
-    <FileVersion>8.0</FileVersion>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <Description>C# library for running cron jobs on .NET</Description>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="Resources\iminetsoft.png" Pack="true" PackagePath="\"></None>
+    <None Include="..\Readme.md" Pack="true" PackagePath="\"></None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
